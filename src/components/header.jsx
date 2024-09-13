@@ -7,6 +7,7 @@ import {
   SignIn,
   SignInButton,
   UserButton,
+  useUser,
 } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
 
@@ -14,6 +15,8 @@ const Header = () => {
   const [showSignIn, setShowSignIn] = useState(false);
 
   const [search, setSearch] = useSearchParams();
+
+  const { user } = useUser();
 
   useEffect(() => {
     if (search.get("sign-in")) {
@@ -50,15 +53,15 @@ const Header = () => {
             </Button>
           </SignedOut>
           <SignedIn>
-            {
-              // only show if recruiter
+            {/* only show if recruiter */}
+            {user?.unsafeMetadata?.role === "recruiter" && (
               <Link to="/post-job">
                 <Button variant="" className="rounded-md max-sm:p-1">
                   <UserPen size={20} className="mr-2" />
                   Post a job
                 </Button>
               </Link>
-            }
+            )}
             <UserButton
               appearance={{
                 elements: {
