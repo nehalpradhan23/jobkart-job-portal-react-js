@@ -59,6 +59,9 @@
 }
 
 @layer utilities {
+  .container {
+    @apply px-4;
+  }
   .gradient {
     @apply bg-gradient-to-br from-gray-500 via-gray-200 to-white;
   }

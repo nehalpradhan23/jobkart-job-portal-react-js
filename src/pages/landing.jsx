@@ -32,8 +32,7 @@ const LandingPage = () => {
           <h1 className="flex flex-col items-center justify-center text-4xl sm:text-5xl lg:text-6xl font-extrabold max-w-7xl mx-auto py-4 gradient-title">
             Explore the market,
             <span>
-              Grab your's or <span className="">Handover</span> those
-              opportunities
+              Grab your's or <span className="">Give</span> those opportunities
             </span>
           </h1>
           <p className="text-gray-300 sm:mt-4 text-xs sm:text-xl">
@@ -80,7 +79,7 @@ const LandingPage = () => {
           </CarouselContent>
         </Carousel>
         {/* accordion ==============================================*/}
-        <div className="mx-auto max-w-3xl w-full">
+        <div className="mx-auto max-w-3xl w-full px-5">
           <Accordion type="single" collapsible>
             {faqs.map(({ question, answer }, index) => (
               <AccordionItem key={index} value={`item-${index + 1}`}>
