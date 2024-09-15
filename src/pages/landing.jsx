@@ -23,7 +23,7 @@ const LandingPage = () => {
       <img
         src="/landing-bg.jpeg"
         alt=""
-        className="w-full opacity-10 absolute z-0 "
+        className="w-full opacity-10 absolute z-0"
       />
       <main className="relative flex flex-col gap-10 sm:gap-20 py-10 sm:py-20 z-10">
         {/* background image ======================== */}

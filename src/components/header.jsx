@@ -33,7 +33,7 @@ const Header = () => {
   // ======================================================
   return (
     <>
-      <nav className="py-4 flex justify-between items-center px-5 backdrop-blur-lg">
+      <nav className="py-3 flex justify-between items-center px-5 h-[60px] md:h-[70px]">
         <Link className="flex gap-2 items-center">
           {/* <Briefcase size={30} className="h-4" /> */}
           <div className="max-md:hidden">

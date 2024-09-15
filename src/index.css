@@ -59,7 +59,7 @@
 }
 
 @layer utilities {
-  .container {
+  .wrapper {
     @apply px-4;
   }
   .gradient {
