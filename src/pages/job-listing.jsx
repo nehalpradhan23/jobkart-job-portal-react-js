@@ -45,7 +45,13 @@ const JobListing = () => {
         // <div className="mt-8 grid md:grid-cols-2 gap-4">
         <div className="mt-8 flex flex-col gap-4">
           {jobs?.length ? (
-            jobs.map((job) => <JobCard key={job.id} job={job} />)
+            jobs.map((job) => (
+              <JobCard
+                key={job.id}
+                job={job}
+                savedInit={job?.saved?.length > 0}
+              />
+            ))
           ) : (
             <div className="">No jobs</div>
           )}
