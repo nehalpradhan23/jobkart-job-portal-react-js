@@ -19,7 +19,7 @@ import {
 
 const LandingPage = () => {
   return (
-    <>
+    <div className="bg-gradient-to-b from-black  to-gray-500">
       <img
         src="/landing-bg.jpeg"
         alt=""
@@ -90,7 +90,7 @@ const LandingPage = () => {
           </Accordion>
         </div>
       </main>
-    </>
+    </div>
   );
 };
 

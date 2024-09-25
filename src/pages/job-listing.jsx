@@ -66,7 +66,7 @@ const JobListing = () => {
   }
 
   return (
-    <div className="wrapper max-w-6xl mx-auto">
+    <div className="wrapper">
       <h1 className="font-extrabold text-4xl md:text-5xl py-10">Latest jobs</h1>
 
       {/* filters ============================================= */}
@@ -112,7 +112,7 @@ const JobListing = () => {
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
-              {companies.map(({ name, id }) => (
+              {companies?.map(({ name, id }) => (
                 <SelectItem key={name} value={id}>
                   {name}
                 </SelectItem>

@@ -85,7 +85,7 @@ const JobCard = ({
         <hr />
         <div className="flex">
           <span className="line-clamp-2 w-[90%]">{job.description}</span>
-          <Link to={`/jobs/${job.id}`} className="flex-1">
+          <Link to={`/job/${job.id}`} className="flex-1">
             <Button className="w-full flex gap-2 items-center justify-center">
               More details
               <ArrowRight size={15} />
