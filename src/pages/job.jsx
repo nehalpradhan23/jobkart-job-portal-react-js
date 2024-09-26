@@ -15,6 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import ApplyJobDrawer from "@/components/apply-job";
 
 const JobPage = () => {
   const { isLoaded, user } = useUser();
@@ -48,7 +49,7 @@ const JobPage = () => {
 
   // =======================================================
   return (
-    <div className="wrapper flex flex-col gap-8 mt-12">
+    <div className="wrapper flex flex-col gap-8 my-12">
       <div className="flex justify-between items-center mb-5">
         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold underline">
           {job?.title}
@@ -115,6 +116,14 @@ const JobPage = () => {
       />
 
       {/* render applications ============================== */}
+      {job?.recruiter_id !== user?.id && (
+        <ApplyJobDrawer
+          job={job}
+          user={user}
+          fetchJob={fnJob}
+          applied={job?.applications?.find((ap) => ap.candidate_id === user.id)}
+        />
+      )}
     </div>
   );
 };
