@@ -16,8 +16,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { SignedOut, useUser } from "@clerk/clerk-react";
 
 const LandingPage = () => {
+  const { isSignedIn, user, isLoaded } = useUser();
+  console.log("user: ", user);
+
+  // --------------------------------
   return (
     <div className="bg-gradient-to-b from-black  to-gray-500">
       <img
@@ -49,11 +54,20 @@ const LandingPage = () => {
               Find jobs
             </Button>
           </Link>
-          <Link to="/post-job">
-            <Button size="xl" className="">
-              Post a job
-            </Button>
-          </Link>
+          <SignedOut>
+            <Link to="/post-job">
+              <Button size="xl" className="">
+                Post a job
+              </Button>
+            </Link>
+          </SignedOut>
+          {user?.unsafeMetadata?.role == "recruiter" && (
+            <Link to="/post-job">
+              <Button size="xl" className="">
+                Post a job
+              </Button>
+            </Link>
+          )}
         </div>
         {/* carousel =========================================*/}
         <Carousel

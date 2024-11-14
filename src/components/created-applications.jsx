@@ -23,13 +23,17 @@ const CreatedApplications = () => {
   // ==========================================================
   return (
     <div className="flex flex-col gap-2">
-      {applications.map((application) => (
-        <ApplicationCard
-          key={application?.id}
-          application={application}
-          isCandidate
-        />
-      ))}
+      {applications.length === 0 ? (
+        <span>No applications</span>
+      ) : (
+        applications?.map((application) => (
+          <ApplicationCard
+            key={application?.id}
+            application={application}
+            isCandidate
+          />
+        ))
+      )}
     </div>
   );
 };
