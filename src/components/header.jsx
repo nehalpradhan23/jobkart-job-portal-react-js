@@ -2,10 +2,12 @@ import { Bookmark, Briefcase, Heart, Save, UserPen } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "./ui/button";
 import {
+  RedirectToSignUp,
   SignedIn,
   SignedOut,
   SignIn,
   SignInButton,
+  SignUpButton,
   UserButton,
   useUser,
 } from "@clerk/clerk-react";
@@ -48,9 +50,14 @@ const Header = () => {
         {/* sign in/out buttons ============================== */}
         <div className="flex gap-8">
           <SignedOut>
-            <Button variant="outline" onClick={() => setShowSignIn(true)}>
-              Login
-            </Button>
+            <div className="flex gap-3">
+              <SignUpButton className="bg-gray-100 text-black">
+                <Button className="bg-gray-100 text-black">Sign up</Button>
+              </SignUpButton>
+              <Button variant="outline" onClick={() => setShowSignIn(true)}>
+                Login
+              </Button>
+            </div>
           </SignedOut>
           <SignedIn>
             {/* only show if recruiter */}

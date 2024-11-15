@@ -23,7 +23,7 @@ const CreatedApplications = () => {
   // ==========================================================
   return (
     <div className="flex flex-col gap-2">
-      {applications.length === 0 ? (
+      {applications?.length === 0 ? (
         <span>No applications</span>
       ) : (
         applications?.map((application) => (
